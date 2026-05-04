@@ -1,7 +1,7 @@
 const { Router } = require("express");
 
 const router = Router();
-const pool = require("../db");
+
 
 const {
   getAllTasks,
@@ -11,13 +11,13 @@ const {
   updateTask,
 } = require("../controllers/tasks.controller");
 
-router.get("/tasks", getAllTasks);
+router.get("/", getAllTasks);
 
-router.get("/tasks/:id", getTaskById);
+router.get("/:id", getTaskById);
 
-router.post("/tasks", createTask);
+router.post("/", createTask);
 
-router.delete("/tasks/:id", deleteTask);
+router.delete("/:id", deleteTask);
 
-router.put("/tasks/:id", updateTask);
+router.put("/:id", updateTask);
 module.exports = router;
